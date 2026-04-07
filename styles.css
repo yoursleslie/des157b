@@ -1,5 +1,6 @@
 /* CSS Resets */
-* {
+* 
+{
     box-sizing: border-box;
 }
 
@@ -11,8 +12,9 @@ img {
 
 /* Page styling */
 body {
-    background-color: #333;
-    color: rgb(235, 235, 235);
+   background: #45AEE6;
+    background: linear-gradient(0deg,rgba(255, 255, 255, 1)  40%, rgba(69, 174, 230, 1)100%);
+   color: rgb(235, 235, 235);
     transition: all 2s;
 }
 
@@ -27,48 +29,78 @@ body.switch {
     max-width: 1366px;
     /* make sure the columns don't get too small and text stays readable */
     min-width: 900px;
-    margin: 1em auto;
-    padding-top: 2em;
+    margin: 0 auto;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
+
 header {
-    margin: 0 auto 2em auto;
+    /* height: 350px; */
+    width: 100%;
+    text-align: center;
+    font-family: 'Fraunces';
+    font-style:italic;
+    font-weight: 200;
+    /* background: #45AEE6;
+    background: linear-gradient(0deg,rgba(255, 255, 255, 1)  0%, rgba(69, 174, 230, 1)100%); */
+    /* background: #D41E27;
+    background: linear-gradient(0deg, rgba(212, 30, 39, 1) 0%, rgba(0, 0, 0, 1) 100%); */
+    
+    margin: 0;
+}
+
+#title h1, #title h2 {
+    color: #125480;
+    font-weight: 400;
+    font-size: 55px;
 }
 
 #banner {
-    position: relative;
-    display: flex;
-    width: 1100px;
-    height: 250px;
-    margin: auto;
-    background-color: rgb(235, 235, 235);
-    color: #333;
-    overflow: hidden;
+    flex: 1;
+    height: auto;
+    overflow: visible; 
     display: grid;
 	place-items: center;
+    align-items: center;
 }
 
 #banner.switch {
-    background-color: #333;
-    color: rgb(235, 235, 235);
+    /* background-color: #333;
+    color: rgb(235, 235, 235); */
     transition: all 2s;
 }
 
 main {
     display: flex;
-    justify-content: space-evenly;
-    margin: 1em auto;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2em;
+    padding: 10px;
 }
 
 main section {
-    flex: 1;
-    border: 1px rgb(235, 235, 235) dashed;
-    margin: 0 .25em;
-    padding: 1em;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(69, 174, 230, 0.2);
+    border-radius: 10px;
 }
 
+h3 {
+    font-family: 'noto sans';
+    font-style: italic;
+    font-weight: 500px;
+    color: #125480;
+}
 a {
     text-decoration: none;
+    font-family: 'noto sans';
+    background-color: #125480;
+    margin: 2px;
+    border-radius: 10px;
+    color: white;
 }
 
 nav ol, nav ul {
@@ -85,12 +117,16 @@ section a {
     line-height: 1.1em;
     display: inline-block;
     padding: .5em;
-    color: orange;
+    text-decoration: none;
+    font-family: 'noto sans';
+    background-color: #125480;
+    margin: 2px;
+    border-radius: 10px;
+    color: white;
 }
 
 section a:hover {
     background-color: orange;
-    color: #333;
 }
 
 section.switch a {
@@ -103,11 +139,12 @@ section.switch a:hover {
 }
 
 button {
+    font-family: 'Lugrasimo';
     position: absolute;
     top: 20px;
     right: 20px;
     padding: 12px;
-    background-color: orange;
+    background-color:rgb(212 30 39);
     color: #333;
     border: 1px solid transparent;
 }
@@ -118,11 +155,19 @@ button:hover {
 }
 
 button.switch {
-    background-color: rgb(235, 235, 235);
+    background-color: rgba(69, 174, 230, 1);
     border-color: #333;
 }
 
 button.switch:hover {
-    background-color: #333;
-    color: rgb(235, 235, 235)
+    background-color: rgba(69, 174, 230, 1);
+    color: black
+}
+
+.sections-grid {
+    flex: 1;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
 }
