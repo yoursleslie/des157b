@@ -90,7 +90,7 @@ main section {
 h3 {
     font-family: 'noto sans';
     font-style: italic;
-    font-weight: 500px;
+    /* font-weight: 500px; */
     color: #125480;
 }
 a {
@@ -196,7 +196,7 @@ body.switch #title h2 {
 }
 
 body.switch main section {
-    background-color: rgba(255 210 106, 0.2)
+    background-color: rgba(255, 210, 106, 0.2);
 }
 
 body.switch section a {
