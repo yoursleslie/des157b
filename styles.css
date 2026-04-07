@@ -6,7 +6,6 @@
 
 img {
     max-width: 100%;
-    display: block;
     height: auto;
 }
 
@@ -61,7 +60,7 @@ header {
 #banner {
     flex: 1;
     height: auto;
-    overflow: visible; 
+    overflow: hidden; 
     display: grid;
 	place-items: center;
     align-items: center;
@@ -144,12 +143,11 @@ button {
     top: 20px;
     right: 20px;
     padding: 12px;
-    background-color:rgb(212 30 39);
-    color: #333;
-    border: 1px solid transparent;
+    background-color:transparent;
+    border: none;
 }
 
-button:hover {
+/* button:hover {
     background-color: coral;
     cursor: pointer;
 }
@@ -157,7 +155,7 @@ button:hover {
 button.switch {
     background-color: rgba(69, 174, 230, 1);
     border-color: #333;
-}
+} */
 
 button.switch:hover {
     background-color: rgba(69, 174, 230, 1);
@@ -170,4 +168,41 @@ button.switch:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5em;
+}
+
+#img-light, #img-dark {
+    transition: opacity 0.8s ease;
+}
+
+#img-dark {
+    
+    display: none;
+}
+
+#img-dark.visible {
+    display: block;
+}
+
+body.switch {
+    background: linear-gradient(0deg, rgba(212, 30, 39, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    color: rgb(235, 235, 235);
+    transition: all 2s;
+}
+
+body.switch #title h1, 
+body.switch #title h2 {
+    color: rgb(212, 30, 39);
+    font-family: 'Lugrasimo';
+}
+
+body.switch main section {
+    background-color: rgba(255 210 106, 0.2)
+}
+
+body.switch section a {
+    background-color: #ffd26a;
+}
+
+body.switch h3 {
+    color: #ffd26a;
 }
