@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(18, 25, 58);
+}
+
+h1 {
+    font-family:"Meddon", cursive;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    font-size: 60px;
+    color: rgba(255,255,255,.3);
+    background: rgb(18, 25, 58);
+    text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+}
+
+video {
+    height: 100vh;
+    display: block;
+    margin: 0 auto;
+}
