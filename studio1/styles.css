@@ -1,20 +1,27 @@
 body {
-    background-color: rgb(18, 25, 58);
+    bbackground: #170ddb;
+    background: linear-gradient(90deg,rgb(32, 38, 74) 0%, rgba(0, 0, 0, 1) 47%, rgba(32, 38, 74) 97%);
 }
 
 h1 {
-    font-family:"Meddon", cursive;
+    font-family:"WindSong", cursive;
     font-weight: 500;
     font-style: normal;
     text-align: center;
+    font-weight: 500;
     font-size: 60px;
-    color: rgba(255,255,255,.3);
+    color: rgb(255,255,255);
     background: rgb(18, 25, 58);
     text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
 }
 
 video {
-    height: 100vh;
-    display: block;
-    margin: 0 auto;
+   display: block;
+   margin: 20px auto;
+   max-width: 1200px;
+   width: 100%;
+
+   max-height: calc(100vh - 100px);
+   height: auto;
+   object-fit: contain; 
 }
