@@ -1,27 +1,94 @@
 body {
-    bbackground: #170ddb;
-    background: linear-gradient(90deg,rgb(32, 38, 74) 0%, rgba(0, 0, 0, 1) 47%, rgba(32, 38, 74) 97%);
+    background: #20264A;
+    background: linear-gradient(90deg, rgba(32, 38, 74, 1) 0%, rgba(0, 0, 0, 1) 41%, rgba(32, 38, 74, 1) 100%);
+    margin: 0;
+    overflow: hidden;
 }
 
 h1 {
-    font-family:"WindSong", cursive;
-    font-weight: 500;
+    font-family: "Alex Brush", cursive;
+    font-weight: 400;
     font-style: normal;
-    text-align: center;
     font-weight: 500;
-    font-size: 60px;
+    font-size: 100px;
     color: rgb(255,255,255);
-    background: rgb(18, 25, 58);
+    background: transparent;
     text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
 }
 
 video {
    display: block;
-   margin: 20px auto;
    max-width: 1200px;
    width: 100%;
-
-   max-height: calc(100vh - 100px);
+   max-height: 100vh;
    height: auto;
    object-fit: contain; 
+}
+
+#replay {
+    display: none;
+    color: rgb(213, 204, 168);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    scale: 4;
+    cursor: pointer;
+}
+
+#lyric1 , #lyric2 , #lyric3 , #lyric4, #lyric5{
+    position: absolute;
+    z-index: 1;
+}
+
+#lyric1{
+    top: 100px;
+    left: 250px;
+}
+
+#lyric2 {
+    top: 150px;
+    right: 325px
+}
+
+#lyric3 {
+    top:225px;
+    right: 75px
+}
+
+#lyric4 {
+   bottom: 150px;
+   left: 250px;
+}
+
+#lyric5 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#lyric6 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+#screen {
+    color: rgb(213, 204, 168);
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    scale: 3;
+    cursor: pointer;
+}
+
+#hearts {
+    color:rgb(213, 204, 168);
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    scale: 3;
+    cursor: pointer;
 }
