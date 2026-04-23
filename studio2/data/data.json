@@ -1,0 +1,58 @@
+{
+    "point1": {
+        "time": "hair done",
+        "song": "When Did You Get So Hot",
+        "artist": "Sabrina Carpenter",
+        "mood": "sleepy",
+        "energy": 2
+    },
+    "point2": {
+        "time": "skincare done",
+        "song": "Tears",
+        "artist": "Sabrina Carpenter",
+        "mood": "sleepy",
+        "energy": 4
+    },
+    "point3": {
+        "time": "face base makeup done",
+        "song": "Diet Pepsi",
+        "artist": "Addison Rae",
+        "mood": "excited",
+        "energy": 3
+    },
+    "point4": {
+        "time": "eyelashes and lips done",
+        "song": "4K",
+        "artist": "El Alfa",
+        "mood": "upbeat",
+        "energy": 4
+    },
+    "point5": {
+        "time": "clothes on",
+        "song": "EOO",
+        "artist": "Bad Bunny",
+        "mood": "nervous",
+        "energy": 5
+    },
+    "point6": {
+        "time": "accessories on",
+        "song": "Candy",
+        "artist": "Plan B",
+        "mood": "hyped",
+        "energy": 5
+    },
+    "point7": {
+        "time": "pregaming/ready",
+        "song": "Mirrors",
+        "artist": "Justin Timberlake",
+        "mood": "emo",
+        "energy": 2
+    },
+    "point8": {
+        "time": "ready",
+        "song": "Rakata",
+        "artist": "Wisin & Yandel",
+        "mood": "buzzed",
+        "energy": 5
+    }
+}

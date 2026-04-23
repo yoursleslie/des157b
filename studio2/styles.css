@@ -1,0 +1,49 @@
+#container {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    
+}
+
+body {
+    background: #ffffff;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgb(243, 160, 194) 80%);
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: "Petit Formal Script", cursive;font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+    text-align: center;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 1), 4px 4px 0px rgba(255, 255, 255, 1), 6px 6px 0px rgba(0, 0, 0, 1);
+    color: black;
+    font-size: 80px;
+    font-weight: 900;
+}
+
+h2 {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight:500;
+    font-style: normal;
+    text-align: center;
+}
+
+#leslie {
+    background-color:blue;
+    height: 400px;
+    width: 400px;
+}
+
+#section h2 {
+    display:transparent;
+}
+
+select{
+    width: 400px;
+    text-align: center;
+    
+    font-family: "Roboto Mono", monospace;
+    
+}
