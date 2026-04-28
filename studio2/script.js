@@ -25,7 +25,12 @@ async function getData() {
                 
                 let albumNum = key.replace('point', '');
                 if (albumNum === '2') albumNum = '1';
-                else if (parseInt(albumNum) > 2) albumNum = String(parseInt(albumNum) - 1);
+                else if (albumNum === '3') albumNum = '2';
+                else if (albumNum === '4') albumNum = '3';
+                else if (albumNum === '5') albumNum = '4';
+                else if (albumNum === '6') albumNum = '5';
+                else if (albumNum === '7') albumNum = '6';
+                else if (albumNum === '8') albumNum = '7';
 
                 songEl.textContent   = data[key].song;
                 artistEl.textContent = data[key].artist;
