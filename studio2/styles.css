@@ -31,13 +31,24 @@ h2 {
 }
 
 #leslie {
-    background-color:blue;
-    height: 400px;
+    /* background-color:blue; */
+    height: 300px;
+    width: 300px;
+}
+
+select{
+    margin-top: 20px;
     width: 400px;
+    font-family: "Roboto Mono", monospace;
+    text-align: center;
 }
 
-#section h2 {
-    display:transparent;
+
+#stars {
+    font-size: 40px;
+    text-align: center;
 }
 
-
+#music img, #song h2, #artist h2 {
+    visibility: hidden;
+}
