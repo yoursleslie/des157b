@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>. 
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://kit.fontawesome.com/c90f0bb4ea.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!--libaries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+
+    <title>capstone</title>
+
+</head>
+<body>
+
+    <!--Opening question-->
+    <section id="opening-poll">
+    <div class="section-inner">
+        <h2>How much do you think the average <br>American's car expenditure is?</h2>
+        <div class="poll-options">
+            <button class="poll-btn" data-answer="chose">Under $500 per month</button>
+            <button class="poll-btn" data-answer="had-to">Between $500-$1000</button>
+            <button class="poll-btn" data-answer="no-car">Over $1000</button>
+        </div>
+    </div>
+    </section>
+    <div id="opening-poll-results" hidden>
+        <div class="results-layout">
+            <div class="results-text">
+                <h1>$1,025</h1>
+                <h2>per month, on average</h2>
+                <p>Source: AAA Your Driving Costs, 2024</p>
+            </div>
+            <div class="results-chart">
+                <canvas id="poll-chart"></canvas>
+            </div>
+       </div>
+        <a href="#petro" class="cta-btn">Continue <i class="fa-solid fa-arrow-down"></i></a>
+    </div>
+    
+
+    <!-- HERO -->
+    <section id="petro">
+        <div class="hero-inner">
+            <p class="hero-eyebrow">the hidden dollar</p>
+            <h1> Why cars?<br>
+                <em>Why oil? </em>
+            </h1>
+            <p class="hero-sub">Why does America love cars? Placeholder for quick explanation of petro dollar</p>
+        </div>
+        <div class="hero-stat">
+            <span class="stat-num">Your Gas Pump</span>
+            <span class="stat-label">gas to gas prices to oil</span>
+        </div>
+        <div class="hero-stat">
+            <span class="stat-num">Oil</span>
+            <span class="stat-label">oil to exporters to US$</span>
+        </div>
+        <div class="hero-stat">
+            <span class="stat-num">Back into the economy</span>
+            <span class="stat-label">USD$ back into the US economy (emphasize the cycle)</span>
+        </div>
+    </section>
+
+       <!-- MONEY FLOW -->
+    <section id="oil-flow">
+        <div class="section-inner">
+            <span class="section-tag">Follow the Oil</span>
+            <h2>The way policymakers move <br> is not a coincidence</h2>
+            <p class="section-intro">Placeholder — visual map of the top oil exporters vs how us interacts/international relations</p>
+
+            <!-- Placeholder for JS/SVG visualization -->
+            <div class="viz-placeholder" aria-label="Money flow visualization placeholder">
+                <i class="fa-solid fa-chart-network"></i>
+                <p>Interactive visualization coming</p>
+            </div>
+
+            <div class="winners-losers">
+                <div class="winners-col">
+                    <h3>Winners</h3>
+                    <ul>
+                       <p>Placeholder</p>
+                    </ul>
+                </div>
+                <div class="losers-col">
+                    <h3>Losers?</h3>
+                    <ul>
+                       <p>Placeholder</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TIMELINE -->
+    <section id="timeline">
+        <div class="section-inner">
+            <span class="section-tag">what does this mean for the us?</span>
+            <h2>How we got here</h2>
+            <p class="section-intro">Car dependency was engineered, decade by decade.</p>
+
+            <div class="timeline">
+
+                <article class="timeline-event">
+                    <div class="timeline-year">1921</div>
+                    <div class="timeline-content">
+                        <h3>Federal Highway Act</h3>
+                        <p>Placeholder — first federal road funding; establishes national road-building infrastructure; marks shift from local to federal control of transportation.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-event">
+                    <div class="timeline-year">1936</div>
+                    <div class="timeline-content">
+                        <h3>GM Streetcar Buyouts Begin</h3>
+                        <p>Placeholder — General Motors, Standard Oil, Firestone form National City Lines; systematically acquire and dismantle urban streetcar networks across the country.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-event">
+                    <div class="timeline-year">1956</div>
+                    <div class="timeline-content">
+                        <h3>Interstate Highway Act</h3>
+                        <p>Placeholder — Eisenhower signs Federal Aid Highway Act; 41,000 miles of highway, 90% federally funded; urban neighborhoods — disproportionately Black — demolished in the process. Source: Weingroff, FHWA.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-event">
+                    <div class="timeline-year">1960s</div>
+                    <div class="timeline-content">
+                        <h3>Single-Use Zoning Spreads</h3>
+                        <p>Placeholder — Euclidean zoning separates residential, commercial, industrial uses; walkable mixed-use neighborhoods become illegal to build nationwide. Source: [zoning source TBD].</p>
+                    </div>
+                </article>
+
+                <article class="timeline-event">
+                    <div class="timeline-year">1973</div>
+                    <div class="timeline-content">
+                        <h3>Oil Embargo &amp; the Petrodollar</h3>
+                        <p>Placeholder — OPEC embargo reveals U.S. oil dependency; rather than restructuring transportation, Nixon negotiates petrodollar agreements deepening the tie between U.S. foreign policy and fossil fuels. Source: [oil dependency source TBD].</p>
+                    </div>
+                </article>
+
+                <article class="timeline-event">
+                    <div class="timeline-year">Today</div>
+                    <div class="timeline-content">
+                        <h3>The Lock-In</h3>
+                        <p>45% of Americans have no transit access. The average household spends more on transportation than on food. Car ownership is not a preference — it is a survival requirement.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+<!--what does this mean for ur montly car paymenet (Optional)-->
+
+    <!-- POLL -->
+    <section id="poll">
+        <div class="section-inner">
+            <span class="section-tag">Your Story</span>
+            <h2>Did you choose your car —<br>or did you have to?</h2>
+
+            <div class="poll-wrapper">
+                <div class="poll-options">
+                    <button class="poll-btn" data-answer="chose">I chose it. I could have lived without one.</button>
+                    <button class="poll-btn" data-answer="had-to">I had to. There was no real alternative.</button>
+                    <button class="poll-btn" data-answer="no-car">I don't own a car.</button>
+                </div>
+                <!-- Poll results rendered by JS -->
+                <div id="poll-results" hidden>
+                    <p class="placeholder">Results will display here after voting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <!-- <footer id="site-footer">
+        <p>A capstone project by <strong>Leslie</strong> — DES 157B, UC Davis</p>
+        <p class="sources">Sources: Richard F. Weingroff (FHWA / <em>Public Roads</em>); Jud Archer, "White Men's Roads Through Black Men's Homes," <em>Vanderbilt Law Review</em>, 2020.</p>
+    </footer> -->
+
+
+</body>
+</html>

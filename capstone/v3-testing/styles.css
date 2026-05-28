@@ -1,0 +1,328 @@
+/* ============================================================
+   BASE
+============================================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    line-height: 1.15;
+    margin: 0 0 1rem;
+}
+
+h1 { font-size: 40px }
+h2 { font-size: 30px }
+h3 { font-size: 20px }
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+}
+
+.section-tag {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.section-intro {
+    max-width: 65ch;
+    margin-bottom: 3rem;
+}
+
+
+/* ============================================================
+   OPENING POLL
+============================================================ */
+#opening-poll {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#opening-poll h2 {
+    margin-bottom: 2.5rem;
+}
+
+#opening-poll .poll-options {
+    margin-bottom: 2rem;
+}
+
+#opening-poll-results {
+    min-height: 99vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+
+}
+
+.results-layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    min-height: 90vh;
+    
+    
+}
+
+.results-text {
+    flex: 3;
+}
+
+.results-chart {
+    flex:2; 
+    height: 500px;
+    
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 3rem;
+}
+
+
+/* ============================================================
+   POLL SHARED (opening + mid-page)
+============================================================ */
+.poll-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.poll-btn {
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    padding: 20px 
+}
+
+.poll-wrapper {
+    max-width: 650px;
+}
+
+#poll-results {
+    margin-top: 2rem;
+}
+
+
+/* ============================================================
+   COST CALCULATOR
+============================================================ */
+#calculator {
+    padding: 20px;
+}
+
+.calculator-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+#calc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+#calc-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* #calc-form input[type=number]::-webkit-inner-spin-button,
+#calc-form input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+#calc-form input[type=number] { -moz-appearance: textfield; } */
+
+.calculator-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cost-toggle {
+    display: flex;
+}
+
+.toggle-btn {
+    flex: 1;
+    cursor: pointer;
+}
+
+.cost-total {
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.cost-label { margin: 0; }
+
+.hidden-cost-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+
+/* ============================================================
+   PETRODOLLAR HERO
+============================================================ */
+#petro {
+    padding: clamp(4rem, 8vw, 8rem) 0;
+}
+
+.hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-eyebrow {
+    margin-bottom: 1rem;
+}
+
+.hero-sub {
+    max-width: 55ch;
+    margin-bottom: 3rem;
+}
+
+.hero-stat {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.stat-num {
+    font-size: 20px;
+    line-height: 1;
+}
+
+
+/* ============================================================
+   OIL FLOW
+============================================================ */
+#oil-flow {
+    padding: 20px;
+}
+
+.viz-placeholder {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.winners-losers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.winners-col,
+.losers-col {
+    padding: 2rem;
+}
+
+.winners-col li,
+.losers-col li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+}
+
+
+/* ============================================================
+   TIMELINE
+============================================================ */
+#timeline {
+    padding: 20px;
+}
+
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7rem;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+}
+
+.timeline-event {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    left: calc(7rem - 4px);
+    top: 2.6rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.timeline-year {
+    text-align: right;
+    padding-right: 2rem;
+    padding-top: 0.2rem;
+}
+
+.timeline-content h3 { margin-bottom: 0.4rem; }
+.timeline-content p  { margin: 0; }
+
+
+/* ============================================================
+   MID-PAGE POLL
+============================================================ */
+#poll {
+    padding: clamp(4rem, 8vw, 8rem) 0;
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+#site-footer {
+    padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
