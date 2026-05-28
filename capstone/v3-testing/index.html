@@ -12,6 +12,10 @@
     <!--libaries-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
+        <!-- D3-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 
@@ -25,9 +29,9 @@
     <div class="section-inner">
         <h2>How much do you think the average <br>American's car expenditure is?</h2>
         <div class="poll-options">
-            <button class="poll-btn" data-answer="chose">Under $500 per month</button>
-            <button class="poll-btn" data-answer="had-to">Between $500-$1000</button>
-            <button class="poll-btn" data-answer="no-car">Over $1000</button>
+            <button class="poll-btn">Under $500 per month</button>
+            <button class="poll-btn">Between $500-$1000</button>
+            <button class="poll-btn">Over $1000</button>
         </div>
     </div>
     </section>
@@ -36,13 +40,20 @@
             <div class="results-text">
                 <h1>$1,025</h1>
                 <h2>per month, on average</h2>
-                <p>Source: AAA Your Driving Costs, 2024</p>
+                <h3>Source: AAA Your Driving Costs, 2024</h3>
+               <p> 
+                    The $1,025/month adds up to over <em>$12,000 per year.</em> For most Americans, this is more than what they spend on food in a year.<br>
+
+                    However, these car costs do not stay fixed over time as they are directly tied to oil prices. With fuel and depreciation being the two largest slices, they are directly correlated to oil market fluctuations.<br> 
+
+                    Therefore, <em>when oil prices rise, so does your car payment</em> — even if your daily routine does not change.
+                </p>
             </div>
             <div class="results-chart">
                 <canvas id="poll-chart"></canvas>
             </div>
        </div>
-        <a href="#petro" class="cta-btn">Continue <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#petro" class="cta-btn">So where does your gas money actually go? <i class="fa-solid fa-arrow-down"></i></a>
     </div>
     
 
@@ -67,35 +78,28 @@
             <span class="stat-num">Back into the economy</span>
             <span class="stat-label">USD$ back into the US economy (emphasize the cycle)</span>
         </div>
+        <a href="#oil-flow" class="cta-btn">Next <i class="fa-solid fa-arrow-down"></i></a>
     </section>
 
        <!-- MONEY FLOW -->
     <section id="oil-flow">
         <div class="section-inner">
-            <span class="section-tag">Follow the Oil</span>
             <h2>The way policymakers move <br> is not a coincidence</h2>
-            <p class="section-intro">Placeholder — visual map of the top oil exporters vs how us interacts/international relations</p>
-
+            <p>Even with a clear motive rooted in oil, history and daily news can make it seem unrelated. 
+            <br>Explore the map below and ask yourself: if this is how policymakers decide their international relations.</p>
             <!-- Placeholder for JS/SVG visualization -->
-            <div class="viz-placeholder" aria-label="Money flow visualization placeholder">
+            <div id="oil-map"></div>
                 <i class="fa-solid fa-chart-network"></i>
-                <p>Interactive visualization coming</p>
+                <div id="map-tooltip" hidden>
+                    <p class="tooltip-name"></p>
+                    <p class="tooltip-category"></p>
+                    <p class="tooltip-description"></p>
+                </div>
             </div>
+            
+            <p>These decisions didn't stay overseas. They came home — in the highways built, the cities designed, and the cars we were told we needed.</p>
+            <a href="#timeline" class="cta-btn"> what does this mean for us domestically? <i class="fa-solid fa-arrow-down"></i></a>
 
-            <div class="winners-losers">
-                <div class="winners-col">
-                    <h3>Winners</h3>
-                    <ul>
-                       <p>Placeholder</p>
-                    </ul>
-                </div>
-                <div class="losers-col">
-                    <h3>Losers?</h3>
-                    <ul>
-                       <p>Placeholder</p>
-                    </ul>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -167,18 +171,15 @@
     <!-- POLL -->
     <section id="poll">
         <div class="section-inner">
-            <span class="section-tag">Your Story</span>
-            <h2>Did you choose your car —<br>or did you have to?</h2>
-
+            <h2>What does it take to change a system built on oil?</h2>
             <div class="poll-wrapper">
                 <div class="poll-options">
-                    <button class="poll-btn" data-answer="chose">I chose it. I could have lived without one.</button>
-                    <button class="poll-btn" data-answer="had-to">I had to. There was no real alternative.</button>
-                    <button class="poll-btn" data-answer="no-car">I don't own a car.</button>
+                    <button class="poll-btn">Legislation and policy reform</button>
+                    <button class="poll-btn">Corporate accountability</button>
+                    <button class="poll-btn">Individual awareness and action</button>
                 </div>
-                <!-- Poll results rendered by JS -->
                 <div id="poll-results" hidden>
-                    <p class="placeholder">Results will display here after voting.</p>
+                    <h2>It starts with us. Today.</h2>
                 </div>
             </div>
         </div>

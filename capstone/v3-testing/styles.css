@@ -1,7 +1,4 @@
-/* ============================================================
-   BASE
-============================================================ */
-
+/* BASE */
 html {
     scroll-behavior: smooth;
 }
@@ -20,14 +17,15 @@ h1 { font-size: 40px }
 h2 { font-size: 30px }
 h3 { font-size: 20px }
 
-
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-
+section {
+    min-height: 100vh;
+}
 
 .section-inner {
     max-width: 1100px;
@@ -35,22 +33,9 @@ ul {
     padding: 0 clamp(1.5rem, 5vw, 4rem);
 }
 
-.section-tag {
-    display: inline-block;
-    margin-bottom: 1rem;
-}
 
-.section-intro {
-    max-width: 65ch;
-    margin-bottom: 3rem;
-}
-
-
-/* ============================================================
-   OPENING POLL
-============================================================ */
+/* OPENING POLL */
 #opening-poll {
-    min-height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -70,7 +55,6 @@ ul {
     justify-content: center;
     max-width: 1100px;
     margin: 0 auto;
-
 }
 
 .results-layout {
@@ -78,29 +62,27 @@ ul {
     align-items: center;
     gap: 4rem;
     min-height: 90vh;
-    
-    
 }
 
-.results-text {
-    flex: 3;
-}
+.results-text { flex: 3; }
 
 .results-chart {
-    flex:2; 
+    flex: 2;
     height: 500px;
-    
 }
 
 .cta-btn {
-    display: inline-block;
-    margin-top: 3rem;
+    display: block;
+    padding: 20px;
+    text-align: left;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    align-self: flex-start;
 }
 
 
-/* ============================================================
-   POLL SHARED (opening + mid-page)
-============================================================ */
+/* POLL SHARED */
 .poll-options {
     display: flex;
     flex-direction: column;
@@ -111,7 +93,7 @@ ul {
     text-align: left;
     cursor: pointer;
     width: 100%;
-    padding: 20px 
+    padding: 20px;
 }
 
 .poll-wrapper {
@@ -122,70 +104,12 @@ ul {
     margin-top: 2rem;
 }
 
-
-/* ============================================================
-   COST CALCULATOR
-============================================================ */
-#calculator {
-    padding: 20px;
-}
-
-.calculator-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-}
-
-#calc-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-#calc-form label {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-/* #calc-form input[type=number]::-webkit-inner-spin-button,
-#calc-form input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
-#calc-form input[type=number] { -moz-appearance: textfield; } */
-
-.calculator-results {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.cost-toggle {
-    display: flex;
-}
-
-.toggle-btn {
-    flex: 1;
-    cursor: pointer;
-}
-
-.cost-total {
-    font-size: 30px;
-    line-height: 1;
-    margin-bottom: 0.25rem;
-}
-
-.cost-label { margin: 0; }
-
-.hidden-cost-list ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+#poll {
+    padding: clamp(4rem, 8vw, 8rem) 0;
 }
 
 
-/* ============================================================
-   PETRODOLLAR HERO
-============================================================ */
+/* PETRO */
 #petro {
     padding: clamp(4rem, 8vw, 8rem) 0;
 }
@@ -196,79 +120,46 @@ ul {
     padding: 20px;
 }
 
-.hero-eyebrow {
-    margin-bottom: 1rem;
-}
 
-.hero-sub {
-    max-width: 55ch;
-    margin-bottom: 3rem;
-}
-
-.hero-stat {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.stat-num {
-    font-size: 20px;
-    line-height: 1;
-}
-
-
-/* ============================================================
-   OIL FLOW
-============================================================ */
+/* OIL FLOW / MAP */
 #oil-flow {
-    padding: 20px;
+    height: auto;
 }
 
-.viz-placeholder {
+#oil-map {
     width: 100%;
     min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
 }
 
-.winners-losers {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.winners-col,
-.losers-col {
-    padding: 2rem;
-}
-
-.winners-col li,
-.losers-col li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.6rem 0;
+#map-tooltip {
+    position: absolute;
+    background: white;
+    border: 1px solid black;
+    padding: 10px;
+    pointer-events: none;
 }
 
 
-/* ============================================================
-   TIMELINE
-============================================================ */
+/* TIMELINE */
 #timeline {
+    min-height: unset;
+    height: 100vh;
+    overflow-y: scroll;
+    box-sizing: border-box;
     padding: 20px;
 }
 
-.timeline {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+#timeline {
+    min-height: unset;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#timeline .section-inner {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 20px clamp(1.5rem, 5vw, 4rem);
 }
 
 .timeline::before {
@@ -308,21 +199,12 @@ ul {
 .timeline-content p  { margin: 0; }
 
 
-/* ============================================================
-   MID-PAGE POLL
-============================================================ */
-#poll {
-    padding: clamp(4rem, 8vw, 8rem) 0;
-}
-
-
-/* ============================================================
-   FOOTER
-============================================================ */
+/* FOOTER
+ 
 #site-footer {
     padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-}
+} */
 
