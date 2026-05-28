@@ -125,13 +125,4 @@
         closingPollResults.hidden = false;
     });
 });
-
-const closeOverlayBtn = document.getElementById('closeOverlay');
-
-if (closeOverlayBtn) {
-    closeOverlayBtn.addEventListener('click', function () {
-        document.getElementById('welcomeOverlay').style.display = 'none';
-    });
-}
-
 })();  
