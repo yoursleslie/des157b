@@ -1,0 +1,43 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #222;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #888;
+    margin: 2.5rem 0 0.75px
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 1.5rem 0 0.4px;
+}
+
+p {
+    font-size: 14px;
+    color: #444;
+    margin: 0 0 px;
+}
+
+ul, ol {
+    margin: 0 0 1px;
+}
+
+li {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 0.35px;
+}
