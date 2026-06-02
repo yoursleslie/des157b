@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>. 
+
+    <meta charset="UTF-8">. 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://kit.fontawesome.com/c90f0bb4ea.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!--libaries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+        <!-- D3-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+
+    <title>capstone</title>
+
+</head>
+<body>
+
+    <!--Opening question-->
+    <section id="opening-poll">
+    <div class="section-inner">
+        <h2>How much do you think the average <br>American's car expenditure is?</h2>
+        <div class="poll-options">
+            <button class="poll-btn">Under $500 per month</button>
+            <button class="poll-btn">Between $500-$1000</button>
+            <button class="poll-btn">Over $1000</button>
+        </div>
+    </div>
+    </section>
+    <div id="opening-poll-results" hidden>
+        <div class="results-layout">
+            <div class="results-text">
+                <h1>$1,025</h1>
+                <h2>per month, on average</h2>
+                <a href="https://newsroom.aaa.com/wp-content/uploads/2024/09/YDC_Fact-Sheet-FINAL-9.2024.pdf"> <h3>AAA Your Driving Costs, 2024 </h3></a>
+                
+               <p> 
+                    The $1,025/month adds up to over <em>$12,000 per year and $180,000 in 15 years</em>  For most Americans, this is more than what they spend on food in a year.<br>
+
+                    However, these car costs do not stay fixed over time as they are directly tied to oil prices. With fuel and depreciation being the two largest slices, they are directly correlated to oil market fluctuations.<br> 
+
+                    Therefore, <em>when oil prices rise, so does your car payment</em> — even if your daily routine does not change.
+                </p>
+                <button class="poll-btn"><a href="#petro">So where does your gas money actually go? <i class="fa-solid fa-arrow-down"></i></a> </button>
+            </div>
+            <div class="results-chart">
+                <canvas id="poll-chart"></canvas>
+            </div>
+            
+       </div>
+
+       
+    </div>
+    
+
+    <!-- HERO -->
+    <section id="petro">
+        <div class="hero-inner">
+            <p class="hero-eyebrow">the hidden dollar</p>
+            <h1> Why cars?<br>
+                <em>Why oil? </em>
+            </h1>
+            <p class="hero-sub">Why does America love cars? Placeholder for quick explanation of petro dollar</p>
+        </div>
+        <div class="hero-stat">
+            <span class="stat-num">Your Gas Pump</span>
+            <span class="stat-label">gas to gas prices to oil</span>
+        </div>
+        <div class="hero-stat">
+            <span class="stat-num">Oil</span>
+            <span class="stat-label">oil to exporters to US$</span>
+        </div>
+        <div class="hero-stat">
+            <span class="stat-num">Back into the economy</span>
+            <span class="stat-label">USD$ back into the US economy (emphasize the cycle)</span>
+        </div>
+        
+        <button class="poll-btn"><a href="#oil-flow">Next <i class="fa-solid fa-arrow-down"></i></a></button>
+    </section>
+
+       <!-- MONEY FLOW -->
+    <section id="oil-flow">
+        <div class="section-inner">
+            <div class="before-map">
+                <h1>Maybe it's not a coincidence? </h1>
+                <h2>Even with a clear motive rooted in oil, history and daily news can make it seem unrelated.</h2> 
+                <p id="ind">Explore the map below and ask yourself: if this is how policymakers decide their international relations.</p>
+
+                <!-- Placeholder for JS/SVG visualization -->
+                <div id="oil-map"></div>
+                    <i class="fa-solid fa-chart-network"></i>
+                    <div id="map-tooltip" hidden>
+                        <p class="tooltip-name"></p>
+                        <p class="tooltip-category"></p>
+                        <p class="tooltip-description"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="after-map">
+                <p>These decisions didn't stay overseas. They came home — in the highways built, the cities designed, and the cars we were told we needed.</p>
+
+                <button class="poll-btn"><a href="#timeline"> what does this mean for us domestically? <i class="fa-solid fa-arrow-down"></i></a></button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- TIMELINE -->
+    <section id="timeline">
+    <div class="timeline-sticky">
+        <div class="timeline-track">
+            <div class="timeline-slide" id="timeline-intro">
+                <p class="section-intro">These decisions didn't stay overseas.<br>They came home.</p>
+            </div>
+
+            <div class="timeline-slide">
+                <div class="timeline-year">1922 - 1956</div>
+                <div class="timeline-content">
+                    <h3>They bought streetcars to replace them</h3>
+                    <p>National City Lines, is a holding company with one purpose: acquire electric streetcar networks in 45 American cities and dismantle them. Formed by General Motors, Standard Oil, and Firestone, they replaced rail with rubber, and eventually. replaced public with private.</p>
+                    <p>By 1950, over 100 transit systems had been converted to diesel buses. These buses were considered to be slower, dirtier, less popular. This led to a decrease in ridership, making cars the best option.</p>
+
+                    <ul>
+                        <li>35 cities dismantled</li>
+                        <li>$1 fine per conviction</li>
+                        <li>1949 ainttrist verdict</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-slide">
+                <div class="timeline-year">June 29, 1956</div>
+                <div class="timeline-content">
+                    <h3>$25 billion, 41,000 miles and no vote required</h3>
+                    <p>Federal Aid Highway Act, was passed and signed by President Eisenhower in 1956. This act created the Interstate Highway System, known to be largest public works project in American history. It was funded by the new gas tax and sold as a national defense.</p>
+                    <p>Construction destroyed over 300,000 homes with majority of the highways running through the hearts of Black and Brown communities. Cities that rejected freeways were able to maintain their waterfronts and walkability, while the rest lost their life.</p>
+
+                    <ul>
+                        <li>330k home demolished</li>
+                        <li>90% federally funded</li>
+                        <li>$0 for trsnsit</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="timeline-slide">
+                <div class="timeline-year">1950s – 1980s</div>
+                <div class="timeline-content">
+                    <h3>The Suburb is a Product.</h3>
+                    <p>With the introduction of the GI Bill, FHA loans, and redlining, America now required a car by design. Zoning laws mandated separation: homes here, shops there, jobs somewhere else entirely. The suburbs were an engineering decision with trillion-dollar consequences.</p>
+
+                    <p>Developers lobbied for minimum parking requirements, cities then ordered seas of asphalt before a single tenant moved in. Every square foot of parking is a square foot that cannot be a home, a park, or a business.</p>
+
+                    <ul>
+                        <li>800M parking spaces in the US</li>
+                        <li>3x more praking than cars</li>
+                        <li>30% of city land dedicated to parking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-slide">
+                <div class="timeline-year">1973 - 1979</div>
+                <div class="timeline-content">
+                    <h3>Two warning signs,both ignored</h3>
+
+                    <p>With the OPEC embargo and Gas lines stretching for miles, President Carter put solar panels on the White House and called the energy crisis. "the moral equivalent of war." Later, Reagan then removed the panels and the crisis ended, with lesson being forgotten.</p>
+
+                    <p>During the 1980s, automobile lobbies fought fuel efficiency standards. Detroit kept building bigger and American stopped demanding something different.</p>
+
+                    <ul>
+                        <li>1981 solar powers removed</li>
+                        <li>55 mph national speed limit</li>
+                        <li>Only last 10 years</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-slide">
+                <div class="timeline-year">1990s – 2010s</div>
+                <div class="timeline-content">
+                    <h3>The lock-in</h3>
+                    <p>The trap was complete by the 1990s. Homes were built mile away from jobs and jobs were built far from transit. Transit was underfunded because of low ridership. However, ridership was low because of its lack of its lack of convenience and the cycle continued.</p>
+
+                    <p>Auto industry lobbying spent $700 million between 1998 and 2018 to fight fuel economy rules, EV mandates, and transit funding.</p>
+
+                    <ul>
+                        <li>$700M auto lobby 1998-2018</li>
+                        <li>91% of US trips are by car</li>
+                        <li>45% of the population with limited to no access to public transit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-slide">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                    <h3>Tthe bill becomes due</h3>
+
+                    <p>29% of our greenhouse gas emissions are soley from transportation, making it the largest source of emissions in the US. On average, the American household spends $10,000+ per year on car ownership, making it the second-largest expense. However, in suburb and car dependent households, its often the largest expense</p>
+
+                    <p>40,000 Americans of road fatalities per yea with pedestrian death rate is rising fast. Infrastructure that is designed to move cars kills the people who do not have one.</p>
+
+                    <ul>
+                        <li>29% of US emissions come from transportation</li>
+                        <li>$10K+ spernt per household/year</li>
+                        <li>40,000 deaths caused by traffic and roads per year</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--what does this mean for ur montly car paymenet (Optional)-->
+
+    <!-- POLL -->
+    <section id="poll">
+        <div class="section-inner">
+            <h2>What does it take to change a system built on oil?</h2>
+            <div class="poll-wrapper">
+                <div class="poll-options">
+                    <button class="poll-btn">Legislation and policy reform</button>
+                    <button class="poll-btn">Corporate accountability</button>
+                    <button class="poll-btn">Individual awareness and action</button>
+                </div>
+                <div id="poll-results" hidden>
+                    <h2>It starts with us. Today.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <!-- <footer id="site-footer">
+        <p>A capstone project by <strong>Leslie</strong> — DES 157B, UC Davis</p>
+        <p class="sources">Sources: Richard F. Weingroff (FHWA / <em>Public Roads</em>); Jud Archer, "White Men's Roads Through Black Men's Homes," <em>Vanderbilt Law Review</em>, 2020.</p>
+    </footer> -->
+
+
+</body>
+</html>
