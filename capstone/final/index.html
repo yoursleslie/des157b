@@ -9,6 +9,11 @@
     <script src="https://kit.fontawesome.com/c90f0bb4ea.js" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
 
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+
     <!--libaries-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
@@ -27,7 +32,7 @@
     <!--Opening question-->
     <section id="opening-poll">
     <div class="section-inner">
-        <h2>How much do you think the average <br>American's car expenditure is?</h2>
+        <h1>How much do you think the average <br>American's car expenditure is?</h1>
         <div class="poll-options">
             <button class="poll-btn">Under $500 per month</button>
             <button class="poll-btn">Between $500-$1000</button>
@@ -64,23 +69,23 @@
     <!-- HERO -->
     <section id="petro">
         <div class="hero-inner">
-            <p class="hero-eyebrow">the hidden dollar</p>
+            <p class="hero-eyebrow">The Hideen Dollar</p>
             <h1> Why cars?<br>
                 <em>Why oil? </em>
             </h1>
-            <p class="hero-sub">Why does America love cars? Placeholder for quick explanation of petro dollar</p>
+            <p class="hero-sub">Everytime you fill your gas tank, you are doing more than just paying your weekly tank. You are actively participating in contributing to a system that is beyong just your commute.  </p>
         </div>
         <div class="hero-stat">
-            <span class="stat-num">Your Gas Pump</span>
-            <span class="stat-label">gas to gas prices to oil</span>
+            <h3 class="stat-num"> From your Gas Pump </h3>
+            <p class="stat-label">Besdies paying for your monthly car payment including insurance and depreciation, fuel is the most viable car cost. However, that expense often fluctuates. This is set by the global oil market, a system that the people never voted for or contribute to.</p>
         </div>
         <div class="hero-stat">
-            <span class="stat-num">Oil</span>
-            <span class="stat-label">oil to exporters to US$</span>
+            <h3 class="stat-num">To the Petrodollar</h3>
+            <p class="stat-label">Since the 1970s, agreements have been made to exclusively trade and sell oil in U.S Dollar. This implies that every nation that actively participates in the oil markets needs to havs USD on hand, benefiting the American economy and currency. </p>
         </div>
         <div class="hero-stat">
-            <span class="stat-num">Back into the economy</span>
-            <span class="stat-label">USD$ back into the US economy (emphasize the cycle)</span>
+            <h3 class="stat-num">Back into the US, A Cycle</h3>
+            <p class="stat-label">Due to the agreement, oil exporters around the world collect U.S Dollars and reinvest them back to U.S economy. The U.S economy actively depends on this loop and the resale of oil. This maakes the U.S looses if the world shifts away from an oil centric world. </p>
         </div>
         
         <button class="poll-btn"><a href="#oil-flow">Next <i class="fa-solid fa-arrow-down"></i></a></button>
@@ -90,27 +95,22 @@
     <section id="oil-flow">
         <div class="section-inner">
             <div class="before-map">
-                <h1>Maybe it's not a coincidence? </h1>
-                <h2>Even with a clear motive rooted in oil, history and daily news can make it seem unrelated.</h2> 
+                <h1>Maybe it's not a coincidence?</h1>
+                <h3>Even with a clear motive rooted in oil, history and daily news can make it seem unrelated.</h3>
                 <p id="ind">Explore the map below and ask yourself: if this is how policymakers decide their international relations.</p>
-
-                <!-- Placeholder for JS/SVG visualization -->
                 <div id="oil-map"></div>
-                    <i class="fa-solid fa-chart-network"></i>
-                    <div id="map-tooltip" hidden>
-                        <p class="tooltip-name"></p>
-                        <p class="tooltip-category"></p>
-                        <p class="tooltip-description"></p>
-                    </div>
+                <i class="fa-solid fa-chart-network"></i>
+                <div id="map-tooltip" hidden>
+                    <p class="tooltip-name"></p>
+                    <p class="tooltip-category"></p>
+                    <p class="tooltip-description"></p>
                 </div>
             </div>
-            
+
             <div class="after-map">
                 <p>These decisions didn't stay overseas. They came home — in the highways built, the cities designed, and the cars we were told we needed.</p>
-
-                <button class="poll-btn"><a href="#timeline"> what does this mean for us domestically? <i class="fa-solid fa-arrow-down"></i></a></button>
+                <button class="poll-btn"><a href="#timeline">What does this mean for the US domestically? <i class="fa-solid fa-arrow-down"></i></a></button>
             </div>
-
         </div>
     </section>
 
@@ -120,11 +120,11 @@
     <div class="timeline-sticky">
         <div class="timeline-track">
             <div class="timeline-slide" id="timeline-intro">
-                <p class="section-intro">These decisions didn't stay overseas.<br>They came home.</p>
+                <h3 class="section-intro">These decisions didn't stay overseas.<br>They came home.</h3>
             </div>
 
             <div class="timeline-slide">
-                <div class="timeline-year">1922 - 1956</div>
+                <h1 class="timeline-year">1922 - 1956</h1>
                 <div class="timeline-content">
                     <h3>They bought streetcars to replace them</h3>
                     <p>National City Lines, is a holding company with one purpose: acquire electric streetcar networks in 45 American cities and dismantle them. Formed by General Motors, Standard Oil, and Firestone, they replaced rail with rubber, and eventually. replaced public with private.</p>
@@ -139,7 +139,7 @@
             </div>
 
             <div class="timeline-slide">
-                <div class="timeline-year">June 29, 1956</div>
+                <h1 class="timeline-year">June 29, 1956</h1>
                 <div class="timeline-content">
                     <h3>$25 billion, 41,000 miles and no vote required</h3>
                     <p>Federal Aid Highway Act, was passed and signed by President Eisenhower in 1956. This act created the Interstate Highway System, known to be largest public works project in American history. It was funded by the new gas tax and sold as a national defense.</p>
@@ -155,7 +155,7 @@
             </div>
 
             <div class="timeline-slide">
-                <div class="timeline-year">1950s – 1980s</div>
+                <h1 class="timeline-year">1950s – 1980s</h1>
                 <div class="timeline-content">
                     <h3>The Suburb is a Product.</h3>
                     <p>With the introduction of the GI Bill, FHA loans, and redlining, America now required a car by design. Zoning laws mandated separation: homes here, shops there, jobs somewhere else entirely. The suburbs were an engineering decision with trillion-dollar consequences.</p>
@@ -171,7 +171,7 @@
             </div>
 
             <div class="timeline-slide">
-                <div class="timeline-year">1973 - 1979</div>
+                <h1 class="timeline-year">1973 - 1979</h1>
                 <div class="timeline-content">
                     <h3>Two warning signs,both ignored</h3>
 
@@ -188,7 +188,7 @@
             </div>
 
             <div class="timeline-slide">
-                <div class="timeline-year">1990s – 2010s</div>
+                <h1 class="timeline-year">1990s – 2010s</h1>
                 <div class="timeline-content">
                     <h3>The lock-in</h3>
                     <p>The trap was complete by the 1990s. Homes were built mile away from jobs and jobs were built far from transit. Transit was underfunded because of low ridership. However, ridership was low because of its lack of its lack of convenience and the cycle continued.</p>
@@ -204,7 +204,7 @@
             </div>
 
             <div class="timeline-slide">
-                <div class="timeline-year">2024</div>
+                <h1 class="timeline-year">2024</h1>
                 <div class="timeline-content">
                     <h3>Tthe bill becomes due</h3>
 

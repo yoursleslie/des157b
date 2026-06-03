@@ -13,9 +13,22 @@ h1, h2, h3 {
     margin: 0 0 1rem;
 }
 
-h1 { font-size: 40px }
-h2 { font-size: 30px }
-h3 { font-size: 20px }
+h1 { 
+    font-size: 30px;
+    font-family: "Unbounded", sans-serif; }
+h2 { 
+    font-size: 20px;
+    font-family: "Unbounded", sans-serif;
+}
+h3 { 
+    font-size: 15px;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+p {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+
+}
 
 ul {
     list-style: none;
@@ -35,7 +48,6 @@ section {
 .section-inner {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 clamp(1.5rem, 5vw, 4rem);
 }
 
 
@@ -44,8 +56,6 @@ section {
     display: flex;
     align-items: center;
 }
-
-
 
 #opening-poll h2 {
     margin-bottom: 2.5rem;
@@ -91,11 +101,13 @@ section {
     gap: 1rem;
 }
 
+
 .poll-btn {
     text-align: left;
     cursor: pointer;
-    width: 100%;
-    padding: 20px;
+    padding: 10px;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+
 }
 
 .poll-wrapper {
@@ -107,19 +119,30 @@ section {
 }
 
 #poll {
-    padding: clamp(4rem, 8vw, 8rem) 0;
+    display: flex;
+    align-items: center;
 }
 
 
 /* PETRO */
 #petro {
-    padding: clamp(4rem, 8vw, 8rem) 0;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#petro h1 {
+    margin-bottom: 30px;
+}
+
+#petro .poll-btn {
+    margin-top: 40px;
+    width:auto;
 }
 
 .hero-inner {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 20px;
 }
 
 
@@ -148,6 +171,10 @@ section {
     position: relative;
     height: calc(7 * 100vh);
     min-height: unset;
+    height: calc(7 * 100vh);
+}
+.timeline-track { 
+    width: calc(7 * 100vw); 
 }
 
 .timeline-sticky {

@@ -59,13 +59,20 @@
     };
 
     const categoryColors = {
-    'Strategic Ally':         '#f0a500',
-    'Ally':                   '#4caf50',
-    'Rival':                  '#e53935',
-    'Sanctioned / Adversary': '#b71c1c',
-    'Military Presence':      '#1565c0',
-    'Military Intervention':  '#6a1b9a',
-    'Neutral':                '#aaaaaa'
+    'Saudi Arabia':'#f0a500',
+    'Russia':'#4caf50',
+    'Rival':'#e53935',
+    'Canada':'#b71c1c',
+    'China':'#1565c0',
+    'Iraq':'#6a1b9a',
+    'Brazil':'#1b5d1e',
+    'United Arab Emirates' : '#b463da',
+    'Iran' : '#a1c1ef',
+    'Kuwait' : '#f565d1',
+    'Venezuela' : '#ff9900',
+    'Libya' : '#1ce2e6',
+    'Syria' : '#9accbc',
+    'Afghanistan' : '#915a91',
     };
 
 
@@ -86,7 +93,7 @@
         .attr('fill', function(d) {
             const name = d.properties.name;
             const country = countryData[name];
-            return country ? categoryColors[country.category] : '#ccc';
+            return country ? categoryColors[name] : '#ccc';
         })
         .attr('stroke', '#fff')
         .attr('stroke-width', 0.5)
