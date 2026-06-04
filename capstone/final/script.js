@@ -59,7 +59,7 @@
     };
 
     const categoryColors = {
-    'Saudi Arabia':'#f0a500',
+    'Saudi Arabia':'#f6ff00',
     'Russia':'#4caf50',
     'Rival':'#e53935',
     'Canada':'#b71c1c',
@@ -71,7 +71,7 @@
     'Kuwait' : '#f565d1',
     'Venezuela' : '#ff9900',
     'Libya' : '#1ce2e6',
-    'Syria' : '#9accbc',
+    'Syria' : '#a73636',
     'Afghanistan' : '#915a91',
     };
 
@@ -120,23 +120,43 @@
     });
 
     // timeline
-    const timelineSection = document.getElementById('timeline');
-    const timelineStickyEl = document.querySelector('.timeline-sticky');
+    gsap.registerPlugin(ScrollTrigger);
+
+    const timelineTrack = document.querySelector('.timeline-track');
     const timelineSlides = document.querySelectorAll('.timeline-slide');
     const totalSlides = timelineSlides.length;
 
-    window.addEventListener('scroll', function() {
-    const sectionTop = timelineSection.getBoundingClientRect().top;
-    const sectionHeight = timelineSection.offsetHeight;
-    const scrolled = -sectionTop;
+    // horizontal scroll
+    gsap.to(timelineTrack, {
+        x: () => -((totalSlides - 1) * window.innerWidth),
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '#timeline',
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: true,
+         }
+    });
 
-    if (scrolled < 0 || scrolled > sectionHeight) return;
+    // fade in/out per slide
+    timelineSlides.forEach(function(slide, i) {
+    const elements = slide.querySelectorAll('h1, h2, h3, p, ul');
 
-    const progress = scrolled / (sectionHeight - window.innerHeight);
-    const maxTranslate = (totalSlides - 1) * 100;
-    const translateX = progress * maxTranslate;
-
-    timelineStickyEl.querySelector('.timeline-track').style.transform = `translateX(-${translateX}vw)`;
+    ScrollTrigger.create({
+        trigger: '#timeline',
+        start: 'top top',
+        end: 'bottom bottom',
+        onUpdate: function(self) {
+            const active = Math.round(self.progress * (totalSlides - 1));
+            if (active === i && !slide.dataset.animated) {
+                slide.dataset.animated = 'true';
+                gsap.fromTo(elements,
+                { opacity: 0, y: 50 },
+                { opacity: 1, y: 0, duration: 1, stagger: 0.2 }
+                );
+            }
+        }
+    });
     });
    
     // closing 
