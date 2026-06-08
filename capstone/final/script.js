@@ -287,7 +287,13 @@ function timelineNext() {
     closingPollBtns.forEach(function(btn) {
         btn.addEventListener("click", function(event) {
             event.preventDefault();
-            console.log("Button clicked");
+            const input = document.getElementById("input-response");
+            if (input.value.trim() === '') {
+                input.style.borderColor = 'rgb(255, 82, 27)';
+                input.focus();
+                return;
+            }
+            input.style.borderColor = 'rgb(53, 44, 40)';
             nameOfFunction();
         });
     });
