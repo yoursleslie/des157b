@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study: They Chose This For Us</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header id="top">
+        <div class="container">
+            <h1>They Chose This For Us</h1>
+            <p>Leslie Navarro — DES 157B, UC Davis, 2026</p>
+            <address><a href="mailto:navarroleslie3015@gmail.com">navarroleslie3015@gmail.com</a></address>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#overview">overview</a></li>
+            <li><a href="#research">research</a></li>
+            <li><a href="#design">design</a></li>
+            <li><a href="#ui">user interface</a></li>
+            <li><a href="#revisions">revisions</a></li>
+            <li><a href="#summary">summary</a></li>
+        </ul>
+    </nav>
+
+    <!-- OVERVIEW -->
+    <section id="overview">
+        <div class="container">
+            <h2>Project Overview</h2>
+            <div id="background">
+                <p>Every month, the average American spends over $1,000 on their car — more than most spend on food. But this isn't just a personal finance problem. It's a structural one. American car dependency wasn't an accident or a lifestyle choice: it was engineered through decades of policy, corporate lobbying, and geopolitical deal-making. This project asks: who built this system, and why are we still paying for it?</p>
+            </div>
+            <div class="content">
+                <div>
+                    <h3>Summary</h3>
+                    <p>
+                        <em>They Chose This For Us</em> is a scroll-based, single-page interactive editorial that traces how the U.S. became structurally dependent on oil — from the petrodollar system to the dismantling of public transit, the construction of the Interstate Highway System, and the suburban sprawl that locked in car ownership for generations. The site uses data visualization, an interactive world map, a historical timeline, and a community response wall to guide users through this argument.
+                    </p>
+                </div>
+                <div>
+                    <h3>Audience</h3>
+                    <p>The primary audience is everyday Americans who own or depend on cars but may not have considered the political and economic forces that shaped that dependency. The project also speaks to students, urban planners, policy-minded readers, and anyone curious about the relationship between oil, foreign policy, and domestic infrastructure. No prior knowledge of economics or politics is assumed.</p>
+                </div>
+                <div>
+                    <h3>Project Goal</h3>
+                    <p>The goal is to reframe car dependency not as a personal choice, but as a structural outcome — one with real financial, environmental, and human costs. By the end of the experience, users should understand that the system was designed this way, and feel prompted to reflect on what it would take to change it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research">
+        <div class="container2">
+            <h2>Project Research</h2>
+            <h3>Comparative Analysis</h3>
+            <div class="content">
+                <div>
+                    <p>To understand how editorial and data-driven web projects communicate complex systemic arguments, I analyzed several scrollytelling projects including the New York Times' "How the Suburbs Took Over America," Bloomberg CityLab's transit coverage, and the Pudding's visual essays. These projects demonstrated how scroll-triggered animation, embedded data, and narrative pacing could guide a reader through an argument without overwhelming them.</p>
+                    <p>I also referenced the "Follow The Money" ministudio project (Library Liberty) I had completed earlier in the course as a benchmark for GSAP scroll animation style and interactive pacing. That project established patterns I carried directly into this capstone: element-level fade-up animations, sticky horizontal scroll sections, and progressive content reveal.</p>
+                </div>
+                <div class="img-container">
+                    <p class="placeholder-note"><img src="media/Frame 1.png"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3>Content Research</h3>
+            <div class="content">
+                <div class="img-container">
+                    <p class="placeholder-note"><img src="media/Frame 2.png"></p>
+                </div>
+                <div>
+                    <p>Content research drew from AAA's Your Driving Costs 2024 report, U.S. Energy Information Administration data on top oil-producing countries, and Pew Research Center polling on American driving habits. For the historical timeline, I relied on academic sources including Deborah Archer's "White Men's Roads Through Black Men's Homes" (<em>Vanderbilt Law Review</em>, 2020) and Richard Weingroff's FHWA history of the Interstate Highway System.</p>
+                    <p>The petrodollar system section required understanding how the 1970s oil agreements shaped U.S. foreign policy and dollar hegemony. The world map section required researching the diplomatic and military relationships between the U.S. and the top 13 oil-producing nations, categorizing them by relationship type: Strategic Ally, Sanctioned/Adversary, Military Presence, Rival, Neutral, and Military Intervention.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESIGN -->
+    <section id="design">
+        <div class="container">
+            <h2>Visual Design</h2>
+            <div class="content">
+                <p>The visual identity centers on a warm parchment background (<code>rgb(241, 224, 197)</code>), forest green headings (<code>rgb(51, 103, 59)</code>), and orange accent buttons (<code>rgb(255, 82, 27)</code>). This palette was chosen to feel grounded and editorial — referencing both the natural world that oil extraction destroys and the urgency of the argument being made. The orange accent color recurs across interactive elements to signal action throughout the site.</p>
+                <p>Typography uses Unbounded for headings — a geometric, bold sans-serif that feels structural and assertive — and Atkinson Hyperlegible for body text, chosen for its high legibility and accessibility. The contrast between the two typefaces mirrors the project's core tension: systemic forces (bold, built) versus human experience (readable, personal).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- UI -->
+    <section id="ui">
+        <div class="container2">
+            <h2>User Interface</h2>
+            <h3>Navigation and Interaction Design</h3>
+            <div class="content">
+                <div>
+                    <p>The site is structured as a single-page, button-driven narrative. Rather than relying on passive scrolling, each section is hidden by default and revealed only when the user clicks a "Next" button — a deliberate choice to make the user an active participant in uncovering the argument. GSAP handles the reveal animation, fading and sliding each section into view on arrival.</p>
+                    <p>The interactive world map uses D3.js and TopoJSON to render 13 color-coded countries based on their U.S. relationship category. Each country features a pin marker and hover tooltip showing the country name, relationship type, and a one-sentence description. The map is intentionally exploration-first — no legend is shown upfront, prompting the user to investigate.</p>
+                    <p>The historical timeline uses a GSAP-driven horizontal scroll, advancing one slide at a time via arrow buttons. Each slide animates its content in with a staggered fade-up. The closing section collects free-text responses via Back4App and displays them as a styled sticky-note wall, showing users that their response joins a collective conversation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3>Usability Testing</h3>
+            <div class="content">
+                <div>
+                    <p>User testing was conducted with three participants: Claire, Aidan, and Johnson. Participants were asked to move through the full site experience and provide feedback on clarity, pacing, and interaction legibility. Tasks included identifying what the world map was showing, navigating the timeline, and completing the closing poll.</p>
+                </div>
+                <div>
+                    <p>Key findings included: the timeline felt too short (insufficient scroll distance), the map was not obviously interactive without hover cues, buttons needed stronger visual affordance, and the closing section's single generic response felt unsatisfying. All four issues were addressed in subsequent revisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVISIONS -->
+    <section id="revisions">
+        <div class="container">
+            <h2>Revisions</h2>
+            <h3>Usability Testing Results</h3>
+            <div class="content">
+                <p>Following user testing, four key revisions were made. The timeline scroll distance was recalculated using <code>(totalSlides - 1) * window.innerWidth</code> to eliminate trailing empty space. Pin markers were added to all 13 countries on the world map, providing a clear visual signal that the countries are interactive. Tooltip styling was unified between the pie chart and the world map, creating a consistent hover experience across both data visualizations. The closing poll was converted from multiple-choice to a free-text input, with responses saved to Back4App and displayed as a sticky-note wall on the final screen.</p>
+                <p>A secondary round of CSS fixes addressed button width inheritance issues across sections, opacity conflicts between GSAP animations and base CSS rules, and an extra closing bracket in the D3 map code that was breaking all JavaScript below it. Each of these was resolved iteratively between test sessions.</p>
+                <p>The section reveal pattern was also revised: an early AOS-based approach was replaced with a GSAP <code>fromTo</code> implementation triggered on button click, which provided more reliable timing control and matched the animation style established in prior coursework.</p>
+            </div>
+        </div>
+        <div class="container2">
+            <h3>Before and After</h3>
+            <div class="content">
+                <div>
+                    <p>The most visible revision was the transition from a scroll-locked vertical/horizontal timeline to a clean arrow-navigated horizontal slide system. The earlier implementation used GSAP ScrollTrigger to pin the section and translate the track on vertical scroll — this caused layout conflicts and user confusion about when the section ended. The revised version uses CSS <code>transform: translateX</code> driven by a click counter, with GSAP handling per-slide content animation independently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUMMARY -->
+    <section id="summary">
+        <div class="container">
+            <h2>Summary</h2>
+            <div class="content">
+                <p>They Chose This For Us began as a car dependency explainer and evolved into a broader argument about the petrodollar system as the root cause of American car culture. The final project guides users from a personal financial framing — how much does a car actually cost? — through geopolitical and structural layers, ending with a collective reflection on what it would take to change a system built on oil.</p>
+                <p>The project demonstrated how data visualization, editorial narrative, and interactive design can work together to make a systemic argument accessible and emotionally resonant. Building with GSAP, D3.js, Chart.js, and Back4App within a single-page architecture required careful attention to JavaScript scoping, animation sequencing, and CSS specificity — all of which produced meaningful technical learning alongside the design work.</p>
+                <p>The core argument remains: car dependency is not a lifestyle choice. It is the downstream consequence of decisions made by policymakers, corporations, and geopolitical agreements over decades. Understanding that is the first step toward imagining something different.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h2>They Chose This For Us</h2>
+            <p>Leslie Navarro — DES 157B, UC Davis, 2026</p>
+            <address><a href="mailto:navarroleslie3015@gmail.com">navarroleslie3015@gmail.com</a></address>
+            <div id="back-to-top">
+                <a href="#top">↑ back to top</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
