@@ -75,10 +75,23 @@ section {
     display: flex;
     align-items: center;
 }
+#opening-poll .poll-btn {
+    align-self: center;
+    min-width: 300px;
+    text-align: center;
+}
 
 #opening-poll h1{
     font-size: 35px;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    border: 3px solid rgb(51, 103, 59);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+
 }
+
 #opening-poll h2 {
     margin-bottom: 2.5rem;
 }
@@ -339,11 +352,19 @@ section {
    padding: 4px 8px;
    display: inline;
 }
-/* FOOTER
+/* FOOTER */
  
 #site-footer {
-    padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-} */
+    padding: 3rem clamp(1.5rem, 5vw, 4rem);
+    border-top: 1px solid rgb(53, 44, 40);
+    margin-top: 4rem;
+}
+
+#site-footer p {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-sources, .footer-libraries {
+    opacity: 0.7;
+}
