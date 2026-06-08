@@ -1,6 +1,81 @@
+let currentSlide = 0;
+
+function revealSection(id) {
+    const section = document.getElementById(id);
+    section.removeAttribute('hidden');
+    section.style.opacity = 1;
+    section.scrollIntoView({ behavior: 'smooth' });
+    const elements = section.querySelectorAll('h1, h2, h3, p, ul, button, canvas, #oil-map');
+    gsap.fromTo(elements,
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', stagger: 0.2, delay: 0.4 }
+    );
+}
+
+function timelineNext() {
+    const slides = document.querySelectorAll('.timeline-slide');
+    const track = document.querySelector('.timeline-track');
+    if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        track.style.transform = 'translateX(-' + (currentSlide * 100) + 'vw)';
+        const elements = slides[currentSlide].querySelectorAll('h1, h2, h3, p, ul, button');
+        gsap.fromTo(elements,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' }
+        );
+    }
+}
+
+
 (function (){
+
+
+    //b4a 
+    Parse.initialize("6ms364JtJRCRE9aGMybnOHjTJe67PznQ3TfbAcpq", "2Nt6B85ydWkk8QK4igHSd7lrlACd5sLbMjwQDCai");
+    Parse.serverURL = "https://parseapi.back4app.com/";
+
+    async function nameOfFunction() {
+    const pollResponse = new Parse.Object("PollResponse");
+    pollResponse.set("answer", document.getElementById("input-response").value);
+
+    try {
+        await pollResponse.save();
+        console.log("New object created");
+
+        const query = new Parse.Query("PollResponse");
+        const results = await query.find();
+
+        const colors = [
+            'rgb(35, 206, 107)',
+            'rgb(171, 121, 103)',
+            'rgb(255, 82, 27)',
+        ];
+
+        const wall = document.getElementById('responses-wall');
+        wall.innerHTML = '';
+        results.forEach(function(obj) {
+            const tag = document.createElement('div');
+            tag.classList.add('response-tag');
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const rotation = (Math.random() * 6 - 3).toFixed(1);
+            tag.style.backgroundColor = color;
+            tag.style.setProperty('--rotation', rotation + 'deg');
+            tag.textContent = obj.get('answer');
+            wall.appendChild(tag);
+        });
+
+        revealSection('end');
+    } catch (error) {
+        console.error("Error: " + error.message);
+    }
+    }
+
+
     'use strict';
     console.log('reading js');
+
+  
+
 
     //opening poll. 
     const pollBtns = document.querySelectorAll('#opening-poll .poll-btn');
@@ -11,7 +86,7 @@
         btn.addEventListener('click', function(){
             pollOptions.hidden = true;
             pollResults.hidden = false;
-            pollResults.scrollIntoView({ behavior: 'smooth' });
+            revealSection('opening-poll-results');
         });
     });
 
@@ -27,7 +102,44 @@
         }]
     }, 
     options: {
-        maintainAspectRatio: false
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: true,
+                position: 'bottom',
+                labels: {
+                    color: 'rgb(53, 44, 40)',
+                    font: {
+                        family: 'Atkinson Hyperlegible',
+                        size: 13
+                    },
+                    boxWidth: 12,
+                    maxWidth: 200
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    labelColor: function() {
+                        return false;
+                    },
+                    label: function(context) {
+                        return ' $' + context.parsed + '/mo — ' + context.label;
+                    }
+                },
+                displayColors: false,
+                backgroundColor: 'rgb(241, 224, 197)',
+                titleColor: 'rgb(53, 44, 40)',
+                borderColor: 'rgb(53, 44, 40)',
+                borderWidth: 1,
+                bodyColor: 'rgb(53, 44, 40)',
+                bodyFont: {
+                    family: 'Atkinson Hyperlegible',
+                    size: 13
+                },
+                padding: 10,
+                cornerRadius: 8
+            }
+        }
     }
 });
 
@@ -115,61 +227,72 @@
             tooltip.style.top = (event.pageY + 12) + 'px';
         })
         .on('mouseout', function() {
-        document.getElementById('map-tooltip').hidden = true;
+            document.getElementById('map-tooltip').hidden = true;
         });
+
+        const pinData = [
+            { name: 'Saudi Arabia',         coords: [45.0,  24.0] },
+            { name: 'Russia',               coords: [90.0,  60.0] },
+            { name: 'Canada',               coords: [-96.0, 60.0] },
+            { name: 'China',                coords: [104.0, 35.0] },
+            { name: 'Iraq',                 coords: [44.0,  33.0] },
+            { name: 'Brazil',               coords: [-51.0,-10.0] },
+            { name: 'United Arab Emirates', coords: [54.0,  24.0] },
+            { name: 'Iran',                 coords: [53.0,  32.0] },
+            { name: 'Kuwait',               coords: [47.5,  29.5] },
+            { name: 'Venezuela',            coords: [-66.0,  8.0] },
+            { name: 'Libya',                coords: [17.0,  27.0] },
+            { name: 'Syria',                coords: [38.0,  35.0] },
+            { name: 'Afghanistan',          coords: [67.0,  33.0] }
+        ];
+
+        svg.selectAll('circle.map-pin')
+        .data(pinData)
+        .enter()
+        .append('circle')
+        .attr('class', 'map-pin')
+        .attr('cx', d => projection(d.coords)[0])
+        .attr('cy', d => projection(d.coords)[1])
+        .attr('r', 5)
+        .attr('fill', 'white')
+        .attr('stroke', 'rgb(53, 44, 40)')
+        .attr('stroke-width', 1.5)
+        .style('cursor', 'pointer')
+        .on('mouseover', function(event, d) {
+            const country = countryData[d.name];
+            const tooltip = document.getElementById('map-tooltip');
+            tooltip.querySelector('.tooltip-name').textContent = d.name;
+            tooltip.querySelector('.tooltip-category').textContent = country.category;
+            tooltip.querySelector('.tooltip-description').textContent = country.description;
+            tooltip.hidden = false;
+        })
+        .on('mousemove', function(event) {
+            const tooltip = document.getElementById('map-tooltip');
+            tooltip.style.left = (event.pageX + 12) + 'px';
+            tooltip.style.top  = (event.pageY + 12) + 'px';
+        })
+        .on('mouseout', function() {
+            document.getElementById('map-tooltip').hidden = true;
+        });
+    
     });
 
     // timeline
     gsap.registerPlugin(ScrollTrigger);
 
-    const timelineTrack = document.querySelector('.timeline-track');
-    const timelineSlides = document.querySelectorAll('.timeline-slide');
-    const totalSlides = timelineSlides.length;
-
-    // horizontal scroll
-    gsap.to(timelineTrack, {
-        x: () => -((totalSlides - 1) * window.innerWidth),
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '#timeline',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: true,
-         }
-    });
-
-    // fade in/out per slide
-    timelineSlides.forEach(function(slide, i) {
-    const elements = slide.querySelectorAll('h1, h2, h3, p, ul');
-
-    ScrollTrigger.create({
-        trigger: '#timeline',
-        start: 'top top',
-        end: 'bottom bottom',
-        onUpdate: function(self) {
-            const active = Math.round(self.progress * (totalSlides - 1));
-            if (active === i && !slide.dataset.animated) {
-                slide.dataset.animated = 'true';
-                gsap.fromTo(elements,
-                { opacity: 0, y: 50 },
-                { opacity: 1, y: 0, duration: 1, stagger: 0.2 }
-                );
-            }
-        }
-    });
-    });
    
     // closing 
     const closingPollBtns = document.querySelectorAll('#poll .poll-btn');
-    const closingPollOptions = document.querySelector('#poll .poll-options');
-    const closingPollResults = document.getElementById('poll-results');
 
     closingPollBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-        closingPollOptions.hidden = true;
-        closingPollResults.hidden = false;
+        btn.addEventListener("click", function(event) {
+            event.preventDefault();
+            console.log("Button clicked");
+            nameOfFunction();
+        });
     });
-});
+
+   
 
 
 
